@@ -171,11 +171,33 @@
                                 <rect key="frame" x="216" y="605" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Feed"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="sKg-RU-qXb" kind="show" id="u99-GL-vN9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEr-Wn-Mn9" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
                                 <rect key="frame" x="112" y="605" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Map"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="aXh-1I-2Po" kind="show" id="Vu2-mf-5ji"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -347,8 +369,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GNL-2N-b9n"/>
-        <segue reference="jWT-87-PJt"/>
+        <segue reference="Vu2-mf-5ji"/>
         <segue reference="ZGM-0e-LdJ"/>
+        <segue reference="u99-GL-vN9"/>
+        <segue reference="jWT-87-PJt"/>
     </inferredMetricsTieBreakers>
 </document>
