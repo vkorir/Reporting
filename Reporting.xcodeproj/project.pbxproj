@@ -19,6 +19,8 @@
 		57BF1D091EB3DE3400746A71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF1D081EB3DE3400746A71 /* Constants.swift */; };
 		57BF1D0B1EB3DEA700746A71 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF1D0A1EB3DEA700746A71 /* RoundButton.swift */; };
 		57BF1D0D1EB404CA00746A71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BF1D0C1EB404CA00746A71 /* GoogleService-Info.plist */; };
+		57BF1D0F1EB40F1200746A71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF1D0E1EB40F1200746A71 /* User.swift */; };
+		57BF1D111EB4156B00746A71 /* OnlineUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF1D101EB4156B00746A71 /* OnlineUsersViewController.swift */; };
 		7D52333BE12DD35FC5F69AB6 /* Pods_Reporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A760935F5D093C4F2EBA0115 /* Pods_Reporting.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		57BF1D081EB3DE3400746A71 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		57BF1D0A1EB3DEA700746A71 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		57BF1D0C1EB404CA00746A71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57BF1D0E1EB40F1200746A71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		57BF1D101EB4156B00746A71 /* OnlineUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersViewController.swift; sourceTree = "<group>"; };
 		84CA64FA788470D5780F55A8 /* Pods-Reporting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reporting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reporting/Pods-Reporting.debug.xcconfig"; sourceTree = "<group>"; };
 		A760935F5D093C4F2EBA0115 /* Pods_Reporting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reporting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB7329D683DCAB371CFC6F3 /* Pods-Reporting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reporting.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reporting/Pods-Reporting.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,11 +118,12 @@
 		57BF1CFC1EB3DCB600746A71 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				57BF1CFE1EB3DD3800746A71 /* SignInViewController.swift */,
-				57BF1D001EB3DDBB00746A71 /* MapViewController.swift */,
-				57BF1D021EB3DDD800746A71 /* FeedViewController.swift */,
-				57BF1D041EB3DDF300746A71 /* NewReportViewController.swift */,
 				57BF1D061EB3DE0400746A71 /* AboutViewController.swift */,
+				57BF1D021EB3DDD800746A71 /* FeedViewController.swift */,
+				57BF1D001EB3DDBB00746A71 /* MapViewController.swift */,
+				57BF1D041EB3DDF300746A71 /* NewReportViewController.swift */,
+				57BF1D101EB4156B00746A71 /* OnlineUsersViewController.swift */,
+				57BF1CFE1EB3DD3800746A71 /* SignInViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				57BF1D081EB3DE3400746A71 /* Constants.swift */,
 				57BF1D0A1EB3DEA700746A71 /* RoundButton.swift */,
+				57BF1D0E1EB40F1200746A71 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -278,7 +284,9 @@
 				57BF1D071EB3DE0400746A71 /* AboutViewController.swift in Sources */,
 				57BF1D051EB3DDF300746A71 /* NewReportViewController.swift in Sources */,
 				57BF1CFF1EB3DD3800746A71 /* SignInViewController.swift in Sources */,
+				57BF1D111EB4156B00746A71 /* OnlineUsersViewController.swift in Sources */,
 				57BF1D011EB3DDBB00746A71 /* MapViewController.swift in Sources */,
+				57BF1D0F1EB40F1200746A71 /* User.swift in Sources */,
 				57BF1D091EB3DE3400746A71 /* Constants.swift in Sources */,
 				57BF1D031EB3DDD800746A71 /* FeedViewController.swift in Sources */,
 				57BF1CE81EB3DC4900746A71 /* AppDelegate.swift in Sources */,

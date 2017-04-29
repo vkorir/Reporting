@@ -10,6 +10,7 @@ struct Constants {
     static let googleMapsAPI = "AIzaSyDkKvhF4LccFKCTseE4_OKn5OWUl2xw1N4"
     static let latitude = 37.871853
     static let longitude = -122.258423
+    
     static let SignInToMap = "SignInToMap"
     static let MapToFeed = "MapToFeed"
     static let MapToAbout = "MapToAbout"
@@ -17,4 +18,9 @@ struct Constants {
     static let FeedToMap = "FeedToMap"
     static let FeedToNew = "FeedToNew"
     static let FeedToAbout = "FeedToAbout"
+    
+    static let feedCell = "feedCell"
+    static let userCell = "userCell"
+    
+    static let Online = "online"
 }
