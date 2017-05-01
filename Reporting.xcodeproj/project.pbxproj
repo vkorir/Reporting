@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579CF29B1EB5631F0050A517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579CF29A1EB5631F0050A517 /* Assets.xcassets */; };
+		579CF29D1EB6A1610050A517 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF29C1EB6A1610050A517 /* Post.swift */; };
+		579CF2A11EB6A3490050A517 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF2A01EB6A3490050A517 /* FeedTableViewCell.swift */; };
 		57BF1CE81EB3DC4900746A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF1CE71EB3DC4900746A71 /* AppDelegate.swift */; };
 		57BF1CED1EB3DC4900746A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BF1CEB1EB3DC4900746A71 /* Main.storyboard */; };
-		57BF1CEF1EB3DC4900746A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BF1CEE1EB3DC4900746A71 /* Assets.xcassets */; };
 		57BF1CF21EB3DC4900746A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BF1CF01EB3DC4900746A71 /* LaunchScreen.storyboard */; };
 		57BF1CFF1EB3DD3800746A71 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF1CFE1EB3DD3800746A71 /* SignInViewController.swift */; };
 		57BF1D011EB3DDBB00746A71 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF1D001EB3DDBB00746A71 /* MapViewController.swift */; };
@@ -25,10 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		579CF29A1EB5631F0050A517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		579CF29C1EB6A1610050A517 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		579CF2A01EB6A3490050A517 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		57BF1CE41EB3DC4900746A71 /* Reporting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reporting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BF1CE71EB3DC4900746A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BF1CEC1EB3DC4900746A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		57BF1CEE1EB3DC4900746A71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57BF1CF11EB3DC4900746A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57BF1CF31EB3DC4900746A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57BF1CFE1EB3DD3800746A71 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -99,9 +103,9 @@
 		57BF1CFA1EB3DC7900746A71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				57BF1CEE1EB3DC4900746A71 /* Assets.xcassets */,
 				57BF1D0C1EB404CA00746A71 /* GoogleService-Info.plist */,
 				57BF1CF31EB3DC4900746A71 /* Info.plist */,
+				579CF29A1EB5631F0050A517 /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				57BF1D081EB3DE3400746A71 /* Constants.swift */,
+				579CF29C1EB6A1610050A517 /* Post.swift */,
+				579CF2A01EB6A3490050A517 /* FeedTableViewCell.swift */,
 				57BF1D0A1EB3DEA700746A71 /* RoundButton.swift */,
 				57BF1D0E1EB40F1200746A71 /* User.swift */,
 			);
@@ -220,7 +226,7 @@
 			files = (
 				57BF1CF21EB3DC4900746A71 /* LaunchScreen.storyboard in Resources */,
 				57BF1D0D1EB404CA00746A71 /* GoogleService-Info.plist in Resources */,
-				57BF1CEF1EB3DC4900746A71 /* Assets.xcassets in Resources */,
+				579CF29B1EB5631F0050A517 /* Assets.xcassets in Resources */,
 				57BF1CED1EB3DC4900746A71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BF1D0B1EB3DEA700746A71 /* RoundButton.swift in Sources */,
+				579CF2A11EB6A3490050A517 /* FeedTableViewCell.swift in Sources */,
+				579CF29D1EB6A1610050A517 /* Post.swift in Sources */,
 				57BF1D071EB3DE0400746A71 /* AboutViewController.swift in Sources */,
 				57BF1D051EB3DDF300746A71 /* NewReportViewController.swift in Sources */,
 				57BF1CFF1EB3DD3800746A71 /* SignInViewController.swift in Sources */,

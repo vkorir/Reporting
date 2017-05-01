@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0dE-ZV-qvj">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9W0-8n-qLN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="otn-9c-GOs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reporting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYl-8B-ovE">
@@ -65,8 +65,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="appName" destination="EYl-8B-ovE" id="pYg-Br-1Kg"/>
                         <outlet property="emailTextField" destination="sDH-tq-0w8" id="5G8-dc-50F"/>
+                        <outlet property="logInButton" destination="LGX-Kv-bQB" id="faj-UK-joQ"/>
                         <outlet property="passwordTextField" destination="Sjt-Ln-fiu" id="f46-Bo-p0j"/>
+                        <outlet property="signUpButton" destination="q54-pG-5yR" id="Udg-hd-Bn0"/>
                         <segue destination="aXh-1I-2Po" kind="show" identifier="SignInToMap" id="kdo-ku-Dw1"/>
                     </connections>
                 </viewController>
@@ -83,7 +86,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uYb-i2-hPg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EZX-if-O70">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-ci-BZu">
@@ -118,7 +121,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dGl-zp-vvk" id="uIh-HH-3a8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -144,67 +147,72 @@
                         <viewControllerLayoutGuide type="bottom" id="x39-Xi-8Xp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FWr-lA-2Us">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNi-F2-gjS" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
-                                <rect key="frame" x="93" y="498" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="29"/>
-                                <state key="normal" title="+"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="9Rx-kP-JrT" kind="show" id="e5A-a3-a6e"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Q-a9-Cde">
-                                <rect key="frame" x="296" y="28" width="79" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="About"/>
-                                <connections>
-                                    <segue destination="pPm-L1-nVx" kind="show" id="ydQ-Ay-NWI"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reporting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxl-38-Fba">
-                                <rect key="frame" x="0.0" y="25" width="112" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXw-nD-f11" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
-                                <rect key="frame" x="158" y="498" width="50" height="50"/>
+                                <rect key="frame" x="184" y="503" width="50.000000000000227" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="0"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="aVF-ZC-GKG" kind="show" id="Sdu-ex-FYU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pu-cY-F5T" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
-                                <rect key="frame" x="227" y="498" width="50" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-t5-mUA">
+                                <rect key="frame" x="63" y="560" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Feed"/>
+                                <color key="backgroundColor" red="0.89437262055837563" green="0.89437262055837563" blue="0.89437262055837563" alpha="0.74664490582191778" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsb-r1-p8s">
+                                <rect key="frame" x="178" y="561" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89437262055837563" green="0.89437262055837563" blue="0.89437262055837563" alpha="0.74664490582191778" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e60-iP-EVf">
+                                <rect key="frame" x="277" y="561" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89437262055837563" green="0.89437262055837563" blue="0.89437262055837563" alpha="0.74664490582191778" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGc-lC-GRA">
+                                <rect key="frame" x="80" y="503" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="new"/>
+                                <connections>
+                                    <action selector="toNewDidTouch:" destination="aXh-1I-2Po" eventType="touchUpInside" id="HcW-LH-BJZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pu-cY-F5T" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
+                                <rect key="frame" x="283" y="503" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Feed" image="feed"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -215,16 +223,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="aboutButton" destination="Y3Q-a9-Cde" id="d6P-WW-uao"/>
-                        <outlet property="appName" destination="bxl-38-Fba" id="UCQ-H7-XxA"/>
                         <outlet property="feed" destination="2Pu-cY-F5T" id="OFY-S9-0PW"/>
-                        <outlet property="newReport" destination="sNi-F2-gjS" id="qPB-zg-h26"/>
-                        <outlet property="userCount" destination="TXw-nD-f11" id="udP-Y4-ykb"/>
+                        <outlet property="feedLabel" destination="e60-iP-EVf" id="7rU-az-G7E"/>
+                        <outlet property="newReport" destination="xGc-lC-GRA" id="Gy9-G0-fuG"/>
+                        <outlet property="newReportLabel" destination="QmT-t5-mUA" id="a4B-en-RnX"/>
+                        <outlet property="onlineLabel" destination="Gsb-r1-p8s" id="Ge3-ll-Mtr"/>
+                        <outlet property="userCount" destination="TXw-nD-f11" id="MHu-QX-lUx"/>
+                        <segue destination="9Rx-kP-JrT" kind="show" identifier="MapToNew" id="Two-Yy-mBF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAo-aV-YJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="112.89355322338831"/>
+            <point key="canvasLocation" x="786.95652173913049" y="112.50000000000001"/>
         </scene>
         <!--New Report View Controller-->
         <scene sceneID="PIm-TU-Wjd">
@@ -235,66 +245,131 @@
                         <viewControllerLayoutGuide type="bottom" id="Jvj-C2-mWr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4GT-H1-Qlv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wxI-rv-IBf">
-                                <rect key="frame" x="23" y="28" width="328" height="128"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="weM-ag-cwS">
+                                <rect key="frame" x="8" y="6" width="383" height="408"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMa-a6-1Ga">
-                                <rect key="frame" x="127" y="176" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sv-fi-woa" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
-                                <rect key="frame" x="216" y="605" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Feed"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="sKg-RU-qXb" kind="show" id="u99-GL-vN9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEr-Wn-Mn9" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
-                                <rect key="frame" x="112" y="605" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Map"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="aXh-1I-2Po" kind="show" id="Vu2-mf-5ji"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMa-a6-1Ga" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
+                                        <rect key="frame" x="125" y="323" width="100" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="submitDidTouch:" destination="9Rx-kP-JrT" eventType="touchUpInside" id="yxu-77-j3h"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wxI-rv-IBf">
+                                        <rect key="frame" x="8" y="82" width="363" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyr-BK-GMk" customClass="DLRadioButton">
+                                        <rect key="frame" x="114" y="44" width="58" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Air">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="radioAir:" destination="9Rx-kP-JrT" eventType="touchUpInside" id="tH7-Mt-89E"/>
+                                            <outletCollection property="otherButtons" destination="ECT-ZE-2wA" id="axR-uo-JMJ"/>
+                                            <outletCollection property="otherButtons" destination="zBx-f5-kIp" id="Vpo-qE-tuj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECT-ZE-2wA" customClass="DLRadioButton">
+                                        <rect key="frame" x="184" y="44" width="83" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Water">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="radioWater:" destination="9Rx-kP-JrT" eventType="touchUpInside" id="1BN-rL-urO"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pollution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5h-oB-RHj">
+                                        <rect key="frame" x="8" y="44" width="92" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBx-f5-kIp" customClass="DLRadioButton">
+                                        <rect key="frame" x="275" y="44" width="88" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Other">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="radioOther:" destination="9Rx-kP-JrT" eventType="touchUpInside" id="5pZ-tW-4jN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.36999382531168068" green="0.74361516497461944" blue="0.27456093688583616" alpha="0.40542059075342457" colorSpace="custom" customColorSpace="sRGB"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="airSelection" destination="fyr-BK-GMk" id="SYH-Of-7ZL"/>
+                        <outlet property="otherSelection" destination="zBx-f5-kIp" id="Lo9-Pv-Qe9"/>
+                        <outlet property="pollutionLabel" destination="Z5h-oB-RHj" id="N0v-Zn-5TR"/>
                         <outlet property="reportText" destination="wxI-rv-IBf" id="FCt-HA-79A"/>
-                        <outlet property="submitButton" destination="BMa-a6-1Ga" id="Oe4-y8-PjW"/>
-                        <outlet property="toFeed" destination="7sv-fi-woa" id="xwF-bc-3SJ"/>
-                        <outlet property="toMap" destination="JEr-Wn-Mn9" id="78z-98-ssa"/>
+                        <outlet property="scrollView" destination="weM-ag-cwS" id="iEj-jP-Hib"/>
+                        <outlet property="submitButton" destination="BMa-a6-1Ga" id="Nfe-9H-cfg"/>
+                        <outlet property="waterSelection" destination="ECT-ZE-2wA" id="juF-sl-FZZ"/>
+                        <segue destination="sKg-RU-qXb" kind="show" identifier="NewToFeed" id="N9h-Nn-tRC"/>
+                        <segue destination="aXh-1I-2Po" kind="show" identifier="NewToMap" id="D2Z-Ls-mkw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5x-6c-UFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="846.9265367316342"/>
+            <point key="canvasLocation" x="787" y="939"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="RxB-kG-tNA">
@@ -305,14 +380,14 @@
                         <viewControllerLayoutGuide type="bottom" id="7ZE-GQ-QwE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yPS-1c-ivO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOG-y5-jdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="847"/>
+            <point key="canvasLocation" x="1624.6376811594205" y="846.19565217391312"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="fDg-UR-5Co">
@@ -323,7 +398,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PYl-8x-mrZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0WZ-a9-sov">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFx-xa-7h3" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
@@ -356,7 +431,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="9Rx-kP-JrT" kind="show" id="ZGM-0e-LdJ"/>
+                                    <action selector="toNewDidTouch:" destination="sKg-RU-qXb" eventType="touchUpInside" id="kRr-3F-0zx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8v-ve-koQ" customClass="RoundButton" customModule="Reporting" customModuleProvider="target">
@@ -393,11 +468,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="151" id="pJ0-oz-ORh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="151" id="pJ0-oz-ORh" customClass="FeedTableViewCell" customModule="Reporting" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pJ0-oz-ORh" id="5zp-MP-lWz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pJ0-oz-ORh" id="5zp-MP-lWz" customClass="FeedTableViewCell" customModule="Reporting" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eY-nB-uXZ">
@@ -439,22 +514,36 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="colorStrip" destination="fZV-FJ-97j" id="D16-Nv-Pc4"/>
+                                            <outlet property="location" destination="322-Ux-PGr" id="Wjv-wl-Jt2"/>
+                                            <outlet property="postDescription" destination="swE-9N-HJW" id="J1u-Xg-gLb"/>
+                                            <outlet property="timeElapsed" destination="0Qj-wJ-mB7" id="Ixh-fP-fZC"/>
+                                            <outlet property="title" destination="3eY-nB-uXZ" id="bvi-In-Gy4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="87J-zB-th6" id="Upp-lT-Qm1"/>
+                        <segue destination="9Rx-kP-JrT" kind="show" identifier="FeedToNew" id="VsQ-dy-1Yh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2h-70-X1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626.4000000000001" y="111.99400299850076"/>
+            <point key="canvasLocation" x="1626.0869565217392" y="111.68478260869566"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feed" width="985" height="988"/>
+        <image name="new" width="453" height="453"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Z0-v0-Drf"/>
-        <segue reference="ydQ-Ay-NWI"/>
-        <segue reference="iYe-Wv-xgy"/>
-        <segue reference="e5A-a3-a6e"/>
+        <segue reference="VsQ-dy-1Yh"/>
+        <segue reference="N9h-Nn-tRC"/>
+        <segue reference="GNL-2N-b9n"/>
     </inferredMetricsTieBreakers>
 </document>

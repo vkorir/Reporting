@@ -8,5 +8,6 @@ target 'Reporting' do
     pod 'FirebaseDatabase'
     pod 'GoogleSignIn'
     pod 'GoogleMaps'
+    pod 'DLRadioButton', '~> 1.4'
 
 end
