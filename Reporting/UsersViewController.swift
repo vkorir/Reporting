@@ -1,23 +1,22 @@
 //
-//  OnlineUsersViewController.swift
+//  UsersViewController.swift
 //  Reporting
 //
-//  Created by Victor Korir on 4/28/17.
+//  Created by Victor Korir on 5/2/17.
 //  Copyright © 2017 Victor Korir. All rights reserved.
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
 
-class OnlineUsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UsersViewController: UITableViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    let usersRef = FIRDatabase.database().reference(withPath: Constants.Online)
+    let usersRef = FIRDatabase.database().reference(withPath: Constants.online)
     var currentUsers: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         usersRef.observe(.childAdded, with: { snap in
             guard let email = snap.value as? String else { return }
             self.currentUsers.append(email)
@@ -36,15 +35,17 @@ class OnlineUsersViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             }
         })
-        tableView.delegate = self
-        tableView.dataSource = self
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentUsers.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.userCell, for: indexPath)
         let onlineUserEmail = currentUsers[indexPath.row]
         cell.textLabel?.text = onlineUserEmail

@@ -2,23 +2,27 @@
 //  FeedViewController.swift
 //  Reporting
 //
-//  Created by Victor Korir on 4/28/17.
+//  Created by Victor Korir on 5/2/17.
 //  Copyright © 2017 Victor Korir. All rights reserved.
 //
 
 import UIKit
-import Firebase
 import FirebaseDatabase
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UITableViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    let postsRef = FIRDatabase.database().reference(withPath: Constants.Posts)
+    let postsRef = FIRDatabase.database().reference(withPath: Constants.posts)
     var posts: [Post] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = 165
+        tableView.separatorColor = UIColor(colorLiteralRed: 240/255.0,
+                                           green: 240/255.0,
+                                           blue: 240/255.0,
+                                           alpha: 1.0)
+
         postsRef.observe(.childAdded, with: { snapshot in
             guard let dictionary = snapshot.value as? [String: Any] else { return }
             let post = Post(title: dictionary[Constants.title] as! String,
@@ -32,26 +36,27 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
             })
         })
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-    @IBAction func toNewDidTouch(_ sender: RoundButton) {
-        NewReportViewController.caller = "NewToFeed"
-        self.performSegue(withIdentifier: Constants.FeedToNew, sender: nil)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.feedCell, for: indexPath) as! FeedTableViewCell
         let post = posts[indexPath.row]
         cell.title.text = post.title
-        cell.timeElapsed.text = "1 minute ago"
-        cell.postDescription.text = post.content
-        cell.location.text = post.location
+        cell.time.text = "Date: " + post.date!
+        cell.content.text = post.content
+        cell.location.text = "Berkeley"
+        
+        cell.content.isUserInteractionEnabled = false
+        cell.updateUI()
+        cell.isUserInteractionEnabled = false
         return cell
     }
 }

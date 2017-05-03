@@ -2,7 +2,7 @@
 //  Constants.swift
 //  Reporting
 //
-//  Created by Victor Korir on 4/28/17.
+//  Created by Victor Korir on 5/2/17.
 //  Copyright © 2017 Victor Korir. All rights reserved.
 //
 
@@ -14,7 +14,8 @@ struct Constants {
     static let SignInToMap = "SignInToMap"
     static let MapToFeed = "MapToFeed"
     static let MapToAbout = "MapToAbout"
-    static let MapToNew = "MapToNew"
+    static let MapToNew = "MapToReport"
+    static let MapTousers = "MapToUsers"
     static let FeedToMap = "FeedToMap"
     static let FeedToNew = "FeedToNew"
     static let FeedToAbout = "FeedToAbout"
@@ -24,8 +25,8 @@ struct Constants {
     static let feedCell = "feedCell"
     static let userCell = "userCell"
     
-    static let Online = "online"
-    static let Posts = "Posts"
+    static let online = "online"
+    static let posts = "Posts"
     static let title = "title"
     static let date = "date"
     static let location = "location"

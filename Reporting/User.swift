@@ -2,11 +2,9 @@
 //  User.swift
 //  Reporting
 //
-//  Created by Victor Korir on 4/28/17.
+//  Created by Victor Korir on 5/2/17.
 //  Copyright © 2017 Victor Korir. All rights reserved.
 //
-
-import Foundation
 import Firebase
 
 struct User {
