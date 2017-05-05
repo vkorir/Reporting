@@ -14,6 +14,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var timeElapsed: UILabel!
     @IBOutlet weak var ribbon: UILabel!
+    @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postDescription: UITextView!
     @IBOutlet weak var locationName: UILabel!
     
@@ -29,6 +30,7 @@ class FeedTableViewCell: UITableViewCell {
         locationName.layer.cornerRadius = 3.0
         locationName.layer.masksToBounds = true
         ribbon.backgroundColor = title.textColor
+        postImage.layer.masksToBounds = true
     }
     
     override func awakeFromNib() {

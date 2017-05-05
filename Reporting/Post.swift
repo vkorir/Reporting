@@ -8,20 +8,26 @@
 
 import Foundation
 import UIKit
+import FirebaseStorage
+import GoogleMaps
 
 class Post {
     let titleIndex: Int
     let date: Date
     let location: [String: Double]
     let pollutionDescription: String
+    let imagePath: String
+    let geocoder: GMSGeocoder!
     
-    init(titleIndex: Int, dateString: String, location: [String: Double], description: String) {
+    init(titleIndex: Int, dateString: String, location: [String: Double], description: String, imagePath: String) {
         self.titleIndex = titleIndex
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
         self.date = dateFormatter.date(from: dateString)!
         self.location = location
         self.pollutionDescription = description
+        self.geocoder = GMSGeocoder()
+        self.imagePath = imagePath
     }
     
     func getTimeElapsed() -> String {
@@ -41,5 +47,43 @@ class Post {
             return "\(minutes / 1440) days ago"
         }
         
+    }
+    
+    func getPlaceName() -> String {
+        let randomNames = ["UC Berkeley", "Sproul Plaza", "2531 Ellsworth St", "2518 Durant Ave", "2111 University Ave", "Soda Hall"]
+        return randomNames[Int(arc4random_uniform(6))]
+    }
+    
+    func getDistance() -> String {
+        let from = CLLocation(latitude: latitude, longitude: longitude)
+        let to = CLLocation(latitude: location[latitudeKey]!, longitude: location[longitudeKey]!)
+        let meters = to.distance(from: from)
+        let miles = meters * 0.000621371
+        
+        if meters < 100 {
+            return "< \(meters) meters"
+        } else if (miles * 10.0).rounded() / 10.0 == 1.0  {
+            return "< \(1) mile"
+        } else if miles < 10 {
+            return "< \((miles * 10.0).rounded() / 10.0) miles"
+        } else if miles < 100 {
+            return"< \(Int((miles / 10.0).rounded() * 10.0) + 10) miles"
+        } else {
+            return "> \(100) miles"
+        }
+    }
+    
+    func getImage(completion: @escaping (Data?) -> Void) {
+        let storageRef = FIRStorage.storage().reference()
+        storageRef.child(self.imagePath).data(withMaxSize: 5 * 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+            }
+            if let data = data {
+                completion(data)
+            } else {
+                completion(nil)
+            }
+        }
     }
 }

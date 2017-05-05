@@ -19,6 +19,7 @@ let markerColors = [UIColor(colorLiteralRed: 214/255.0, green: 45/255.0, blue: 3
                     UIColor(colorLiteralRed: 0, green: 135/255.0, blue: 68/255.0, alpha: 1.0)]
 var posts: [Post] = []
 
+let ToSignIn = "toSignIn"
 let SignInToMap = "SignInToMap"
 let MapToFeed = "MapToFeed"
 let MapToAbout = "MapToAbout"
@@ -35,10 +36,16 @@ let userCell = "userCell"
 
 let onlinePath = "Online"
 let postsPath = "Posts"
+let imagesPath = "Images"
 
+let nameKey = "name"
+let addressKey = "address"
 let pollutionIndexKey = "titleIndex"
 let dateKey = "date"
 let locationKey = "location"
 let latitudeKey = "latitude"
 let longitudeKey = "longitude"
 let descriptionKey = "description"
+let imagePath = "imagePath"
+
+let placeholder = "Describe the incident..."

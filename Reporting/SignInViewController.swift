@@ -23,7 +23,7 @@ class SignInViewController: UIViewController {
             }
         }
         
-        view.backgroundColor = UIColor.orange
+        view.backgroundColor = greenTheme
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
         view.addGestureRecognizer(tap)

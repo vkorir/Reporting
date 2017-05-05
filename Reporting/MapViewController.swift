@@ -35,10 +35,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         
         postsRef.observe(.childAdded, with: { snapshot in
             guard let dictionary = snapshot.value as? [String: AnyObject] else { return }
+            var pathImage = ""
+            if dictionary.keys.contains(imagePath) {
+                pathImage = dictionary[imagePath] as! String
+            }
             let post = Post(titleIndex: dictionary[pollutionIndexKey] as! Int,
                             dateString: dictionary[dateKey] as! String,
                             location: dictionary[locationKey] as! [String: Double],
-                            description: dictionary[descriptionKey] as! String)
+                            description: dictionary[descriptionKey] as! String,
+                            imagePath: pathImage)
             posts.append(post)
             
             let lat: Double = post.location[latitudeKey]!
@@ -54,6 +59,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 12)
         map.camera = camera
         map.isMyLocationEnabled = true
+        map.settings.myLocationButton = true
         
         manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyBest

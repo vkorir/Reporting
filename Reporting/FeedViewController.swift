@@ -14,7 +14,7 @@ class FeedViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Feed"
         
-        tableView.rowHeight = 145
+        tableView.rowHeight = 200
         tableView.separatorColor = lightGray
     }
     
@@ -38,7 +38,17 @@ class FeedViewController: UITableViewController {
         cell.title.textColor = markerColors[post.titleIndex]
         cell.timeElapsed.text = post.getTimeElapsed()
         cell.postDescription.text = post.pollutionDescription
-        cell.locationName.text = " " + "Berkeley"
+        cell.locationName.text = " " + post.getPlaceName() + ", " + post.getDistance()
+        post.getImage(completion: { imgData in
+            if imgData != nil {
+                var img = UIImage(data: imgData!)
+                if (img?.size.width.isLess(than: (img?.size.height)!))! {
+                    let scale = CGFloat(1.0)
+                    img = UIImage(cgImage: (img?.cgImage!)!, scale: scale, orientation: UIImageOrientation.upMirrored)
+                }
+                cell.postImage?.image = img
+            }
+        })
         
         cell.postDescription.isUserInteractionEnabled = false
         cell.updateUI()

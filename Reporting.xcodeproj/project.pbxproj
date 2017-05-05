@@ -11,6 +11,7 @@
 		570653191EB95E3D0036FA37 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570653181EB95E3D0036FA37 /* AboutViewController.swift */; };
 		5706531B1EB973A60036FA37 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5706531A1EB973A60036FA37 /* FeedTableViewCell.swift */; };
 		5706531D1EB974BB0036FA37 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5706531C1EB974BB0036FA37 /* Post.swift */; };
+		57272BE51EBC6CB8007D624C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57272BE41EBC6CB8007D624C /* CameraViewController.swift */; };
 		573E72901EBB787400D5FA03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573E728F1EBB787400D5FA03 /* CoreLocation.framework */; };
 		577A56B91EB9407400076DCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A56B81EB9407400076DCE /* AppDelegate.swift */; };
 		577A56BE1EB9407400076DCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577A56BC1EB9407400076DCE /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		570653181EB95E3D0036FA37 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5706531A1EB973A60036FA37 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		5706531C1EB974BB0036FA37 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		57272BE41EBC6CB8007D624C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		573E728F1EBB787400D5FA03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		577A56B51EB9407400076DCE /* Reporting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reporting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577A56B81EB9407400076DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				570653181EB95E3D0036FA37 /* AboutViewController.swift */,
+				57272BE41EBC6CB8007D624C /* CameraViewController.swift */,
 				577A56D51EB941BD00076DCE /* FeedViewController.swift */,
 				577A56D31EB941A100076DCE /* MapViewController.swift */,
 				577A56D71EB941D400076DCE /* ReportViewController.swift */,
@@ -294,6 +297,7 @@
 				5706531D1EB974BB0036FA37 /* Post.swift in Sources */,
 				577A56D01EB9416500076DCE /* SignInViewController.swift in Sources */,
 				577A56D21EB9418E00076DCE /* UsersViewController.swift in Sources */,
+				57272BE51EBC6CB8007D624C /* CameraViewController.swift in Sources */,
 				577A56D81EB941D400076DCE /* ReportViewController.swift in Sources */,
 				577A56D61EB941BD00076DCE /* FeedViewController.swift in Sources */,
 				577A56E01EB953D900076DCE /* User.swift in Sources */,

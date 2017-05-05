@@ -6,8 +6,11 @@ target 'Reporting' do
     pod 'Firebase'
     pod 'FirebaseAuth'
     pod 'FirebaseDatabase'
+    pod 'FirebaseStorage'
     pod 'GoogleSignIn'
     pod 'GoogleMaps'
+    pod 'GooglePlaces'
+    pod 'GooglePlacePicker'
     pod 'DLRadioButton', '~> 1.4'
     
 end
