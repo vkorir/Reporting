@@ -50,8 +50,10 @@ class Post {
     }
     
     func getPlaceName() -> String {
-        let randomNames = ["UC Berkeley", "Sproul Plaza", "2531 Ellsworth St", "2518 Durant Ave", "2111 University Ave", "Soda Hall"]
-        return randomNames[Int(arc4random_uniform(6))]
+        let randomNames = ["1903 Haste St", "2520-2336 Hearst Ave", "Hilgard Hall", "Ridge Path", " Bear Chix Bootcamp", "Strawberry Creek",
+                            "Grinnell Pathway", "West Cir", "2123 Oxford St", "1823 Berkeley Way", "2557 Le Conte Ave", "Hearst Memorial Gymnasium",
+                            "Free Speech Bikeway", "Jacobs Hall", "S Hall rd", "UC Berkeley"]
+        return randomNames[Int(arc4random_uniform(UInt32(randomNames.count)))]
     }
     
     func getDistance() -> String {
