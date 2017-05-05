@@ -19,7 +19,7 @@ class SignInViewController: UIViewController {
 
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: SignInToMap, sender: nil)
+//                self.performSegue(withIdentifier: SignInToMap, sender: nil)
             }
         }
         
@@ -54,6 +54,7 @@ class SignInViewController: UIViewController {
                                                                                                password: self.passwordTextField.text!)
                                                                     }
                                         }
+                                        self.performSegue(withIdentifier: SignInToMap, sender: nil)
         }
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: .default)

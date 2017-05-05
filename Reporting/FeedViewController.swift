@@ -14,7 +14,7 @@ class FeedViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Feed"
         
-        tableView.rowHeight = 200
+        tableView.rowHeight = 300
         tableView.separatorColor = lightGray
     }
     
