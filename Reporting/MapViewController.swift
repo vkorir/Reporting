@@ -10,23 +10,20 @@ import UIKit
 import Firebase
 import GoogleMaps
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
 
-    @IBOutlet weak var appName: UILabel!
-    @IBOutlet weak var about: UIButton!
-    @IBOutlet weak var toReport: RoundButton!
-    @IBOutlet weak var toUsers: RoundButton!
-    @IBOutlet weak var toFeed: RoundButton!
-    @IBOutlet weak var report: UILabel!
-    @IBOutlet weak var users: UILabel!
-    @IBOutlet weak var feed: UILabel!
-    
-    var usersRef = FIRDatabase.database().reference(withPath: Constants.online)
+    @IBOutlet weak var map: GMSMapView!
+    var usersRef = FIRDatabase.database().reference(withPath: onlinePath)
+    let postsRef = FIRDatabase.database().reference(withPath: postsPath)
     var user: User!
+    var mapView: GMSMapView!
+    var manager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        map.delegate = self
+        self.navigationItem.title = "Reporting"
+        
         //Firebase authorization listener
         FIRAuth.auth()!.addStateDidChangeListener { auth, user in
             guard let user = user else { return }
@@ -36,28 +33,31 @@ class MapViewController: UIViewController {
             currentUserRef.onDisconnectRemoveValue()
         }
         
-        usersRef.observe(.value, with: { snapshot in
-            if snapshot.exists() {
-                self.toUsers.setTitle(snapshot.childrenCount.description, for: .normal)
-            } else {
-                self.toUsers.setTitle("0", for: .normal)
-            }
+        postsRef.observe(.childAdded, with: { snapshot in
+            guard let dictionary = snapshot.value as? [String: AnyObject] else { return }
+            let post = Post(titleIndex: dictionary[pollutionIndexKey] as! Int,
+                            dateString: dictionary[dateKey] as! String,
+                            location: dictionary[locationKey] as! [String: Double],
+                            description: dictionary[descriptionKey] as! String)
+            posts.append(post)
+            
+            let lat: Double = post.location[latitudeKey]!
+            let lng: Double = post.location[longitudeKey]!
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+            marker.title = pollutionOptions[post.titleIndex]
+            marker.snippet = "latitude: \(lat) longitude: \(lng)"
+            marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.5)
+            marker.icon = GMSMarker.markerImage(with: markerColors[post.titleIndex])
+            marker.map = self.map
         })
         
-        let camera = GMSCameraPosition.camera(withLatitude: Constants.latitude,
-                                              longitude: Constants.longitude,
-                                              zoom: 12)
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 12)
+        map.camera = camera
+        map.isMyLocationEnabled = true
         
-        mapView.addSubview(appName)
-        mapView.addSubview(about)
-        mapView.addSubview(toReport)
-        mapView.addSubview(toUsers)
-        mapView.addSubview(toFeed)
-        mapView.addSubview(report)
-        mapView.addSubview(users)
-        mapView.addSubview(feed)
-        
-        self.view = mapView
+        manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
 }

@@ -19,9 +19,11 @@ class SignInViewController: UIViewController {
 
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: Constants.SignInToMap, sender: nil)
+                self.performSegue(withIdentifier: SignInToMap, sender: nil)
             }
         }
+        
+        view.backgroundColor = UIColor.orange
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
         view.addGestureRecognizer(tap)

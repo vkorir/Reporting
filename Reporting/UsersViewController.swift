@@ -11,11 +11,12 @@ import FirebaseDatabase
 
 class UsersViewController: UITableViewController {
     
-    let usersRef = FIRDatabase.database().reference(withPath: Constants.online)
+    let usersRef = FIRDatabase.database().reference(withPath: onlinePath)
     var currentUsers: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Online"
         
         usersRef.observe(.childAdded, with: { snap in
             guard let email = snap.value as? String else { return }
@@ -46,7 +47,7 @@ class UsersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.userCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: userCell, for: indexPath)
         let onlineUserEmail = currentUsers[indexPath.row]
         cell.textLabel?.text = onlineUserEmail
         return cell

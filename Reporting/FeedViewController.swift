@@ -7,35 +7,19 @@
 //
 
 import UIKit
-import FirebaseDatabase
 
 class FeedViewController: UITableViewController {
-    
-    let postsRef = FIRDatabase.database().reference(withPath: Constants.posts)
-    var posts: [Post] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Feed"
         
-        tableView.rowHeight = 165
-        tableView.separatorColor = UIColor(colorLiteralRed: 240/255.0,
-                                           green: 240/255.0,
-                                           blue: 240/255.0,
-                                           alpha: 1.0)
-
-        postsRef.observe(.childAdded, with: { snapshot in
-            guard let dictionary = snapshot.value as? [String: Any] else { return }
-            let post = Post(title: dictionary[Constants.title] as! String,
-                            date: dictionary[Constants.date] as! String,
-                            location: dictionary[Constants.location] as! String,
-                            content: dictionary[Constants.content] as! String)
-            post.setValuesForKeys(dictionary)
-            self.posts.append(post)
-            
-            DispatchQueue.main.async(execute: {
-                self.tableView.reloadData()
-            })
-        })
+        tableView.rowHeight = 145
+        tableView.separatorColor = lightGray
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,14 +31,16 @@ class FeedViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.feedCell, for: indexPath) as! FeedTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: feedCell, for: indexPath) as! FeedTableViewCell
         let post = posts[indexPath.row]
-        cell.title.text = post.title
-        cell.time.text = "Date: " + post.date!
-        cell.content.text = post.content
-        cell.location.text = "Berkeley"
         
-        cell.content.isUserInteractionEnabled = false
+        cell.title.text = pollutionOptions[post.titleIndex]
+        cell.title.textColor = markerColors[post.titleIndex]
+        cell.timeElapsed.text = post.getTimeElapsed()
+        cell.postDescription.text = post.pollutionDescription
+        cell.locationName.text = " " + "Berkeley"
+        
+        cell.postDescription.isUserInteractionEnabled = false
         cell.updateUI()
         cell.isUserInteractionEnabled = false
         return cell

@@ -12,7 +12,7 @@ class AboutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "About"
+        self.navigationController?.navigationBar.tintColor = greenTheme
     }
 }
